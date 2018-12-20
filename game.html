@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <title>Material Design Bootstrap</title>
+                <link rel="stylesheet" href="assets/css/reset.css">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+                <link rel="stylesheet" href="assets/css/style.css">
+                <audio autoplay="autoplay" controls="controls">
+                        <source src="http://www.pacdv.com/sounds/free-music/glow-in-the-dark.mp3" />     
+                    </audio>
+                <audio src ="assets/sounds/bell.wav" id="bell"></audio>  
+                <audio src ="assets/sounds/wrong.wav" id="wrong"></audio>  
+                <audio src ="assets/sounds/lost.wav" id="lost"></audio>   
+              </head>
+            
+
+<body>
+        
+ <div class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <img class="col-sm-6 mt-3 animated bounceIn " src="assets/images/HangmanTitle.png">
+        <div class="col-sm-3"></div>
+    </div>
+    
+</div>
+
+    
+    <div class="container">
+          
+        <div class="row">
+
+            <div class="col-sm-9">
+                <img class="animated bounceInDown img-fluid mt-3" src="assets/images/h0.png">
+                <div class="container" id="manlocation"> </div>
+            </div>
+            <div class="col-sm-3 my-border animated bounceInDown h-50">
+        
+                <!--<div class="row border border-secondary"><h2 class="#">Right Guesses</h2></div>
+                <div class="row border border-secondary"><h2 id="rightguesses"></h2></div>  -->
+                <div class="row border border-secondary"><h2 class="#">Current word</h2></div>
+                <div class="row border border-secondary"><h2 id="currentword"></h2></div>
+                <div class="row border border-secondary"><h2 class="#">Guesses left</h2></div>
+                <div class="row border border-secondary"><h2 id="guessesleft"></h2></div>
+                <div class="row border border-secondary"><h2 class="#">Wrong Guesses</h2></div>
+                <div class="row border border-secondary"><h2 id="wrongguesses"></h2></div>
+
+            </div>
+        </div>
+
+    </div>
+    
+    </div>
+    <div class="container">
+        <p id = "manlocation"></p>
+
+    </div>
+    <script src="assets/javascript/game.js"> </script>
+   
+
+    
+</body>
+</html>

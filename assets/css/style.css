@@ -1,0 +1,29 @@
+/* added the background size contain and centered to make it fit the whole background*/
+body {
+  background-image: url(../images/desert-background-simple-game-level-location-concept-hd-looping-animation_rfgqov0se_thumbnail-full01.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.play {
+  margin-top: 7%;
+  box-shadow: 5px;
+}
+
+#play:hover {
+  display: hidden;
+}
+
+.my-border {
+  border: 5px solid black;
+  border-radius: 10px;
+}
+
+#manlocation {
+  position: relative;
+  bottom: 60%;
+  left: 21%;
+  z-index: 3;
+}
