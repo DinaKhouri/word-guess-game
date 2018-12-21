@@ -1,33 +1,23 @@
 console.log("hello world");
 
-// I avoided picking words with the same letter twice xD
+// my array from words that computer can chose from, it can be as much as we want
 var words = ["plan", "dog", "study", "travel", "steak"];
 //added music effects
 var bell = document.getElementById("bell");
 var wrong = document.getElementById("wrong");
-var lost = document.getElementById("lost");
+var clap = document.getElementById("clap");
+var sorry = document.getElementById("sorry");
 
 //computer picks randomly from array of words
 var rand = words[Math.floor(Math.random() * words.length)];
 console.log(rand);
-//created this array to be able to compare the index of right letter and to add you win messege when the array reaches a specific length
+//created this array to be able to compare the index of right letter
+//and to add you win messege when the array reaches a specific length
 var rightletters = [];
-//created and array of wrongwords to be able to change hanging man images accourding to length of this array, and to be able to show a msg that says you lost when the array reaches a specific length
+//created an array of wrongwords to be able to change hanging man images
+// accourding to length of this array, and to be able to show a msg that says you lost when the array reaches a specific length
 var wrongletters = [];
 //this starts as an empty array then generates number of dashes after the computer picks a word and counts the letters
-//will create dashesadded array from this one to be able to show the correct guesses and replace them with dashes
-// var dashes=[];
-
-// computer counts letters of picked word resource for code https://stackoverflow.com/questions/39451725/how-to-count-letters-inside-a-string
-//function letterCounter(str) {
-//  var letters = 0;
-//var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//for (var i=0; i<str.length;i++) {
-//  if (str[i] === alphabet.split("")) {
-//     letters = letters + str[i];
-// }
-//}
-//}
 // computer puts dashes acocurding to number of letters of rand using .push method and for loop that we learned in class
 var dashesadded = [];
 var dashes = function() {
@@ -75,8 +65,11 @@ document.addEventListener("keypress", function(event) {
     var score = wrongletters.length;
     console.log(score);
   }
-  //when score reaches the count 8 we should show the msg "sorry"
+  //when score reaches the count 6 we should show the msg "sorry"
   //add if to display hangman images based on score count
+  //there might seem that there is a problem with playing the bell and wrong sound
+  //as they dont play everytime but it happens only when we press all the buttons too fast,
+  //if we take a moment between presses they will all play the sounds correctly
   if (score == 1) {
     document.getElementById("manlocation").innerHTML =
       '<img src="assets/images/man1.png">';
@@ -103,14 +96,16 @@ document.addEventListener("keypress", function(event) {
     wrong.play();
   } else if (score == 7) {
     console.log("sorry");
-    document.getElementById("manlocation").innerHTML =
-      '<img src="assets/images/sorry.png">';
-    wrong.lost();
+    document.getElementById("manlocation").innerHTML = // added mybutton class to both the sorry and
+      //wow imgs so that when the user clicks it takes him back to the main page to play again
+      '<a class="mybutton" href="index.html"><img src="assets/images/sorry.png"></a>';
+    sorry.play();
   } else if (dashesadded.toString() == splitrand.toString()) {
     console.log("you win");
+    clap.play();
     document.getElementById("manlocation").innerHTML =
-      '<img src="assets/images/wow.png">';
+      '<a class="mybutton" href="index.html"><img src="assets/images/wow.png"></a>';
   }
   document.getElementById("wrongguesses").innerHTML = wrongletters;
-  document.getElementById("guessesleft").innerHTML = 6 - score;
+  document.getElementById("guessesleft").innerHTML = 6 - wrongletters.length;
 });
