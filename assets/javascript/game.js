@@ -35,7 +35,7 @@ console.log(splitrand);
 
 // let computer recognize the letter the player presses
 
-document.addEventListener("keypress", function(event) {
+document.addEventListener("keypress", function play(event) {
   var letter = event.key;
   console.log(letter);
   //condition if letter matches any letter from random selected word
@@ -100,9 +100,11 @@ document.addEventListener("keypress", function(event) {
       //wow imgs so that when the user clicks it takes him back to the main page to play again
       '<a class="mybutton" href="index.html"><img src="assets/images/sorry.png"></a>';
     sorry.play();
+    document.removeEventListener("keypress", play);
   } else if (dashesadded.toString() == splitrand.toString()) {
     console.log("you win");
     clap.play();
+    document.removeEventListener("keypress", play);
     document.getElementById("manlocation").innerHTML =
       '<a class="mybutton" href="index.html"><img src="assets/images/wow.png"></a>';
   }
