@@ -11,6 +11,5 @@ https://dinakhouri.github.io/word-guess-game/
 #### Instructions
 
 - Game randomly picks a word, and the user has to guess which word the app chose by guessing them one letter at a time.
-
-* Game shows Wins.
-* Game shows Losses.
+- Game shows Wins.
+- Game shows Losses.
